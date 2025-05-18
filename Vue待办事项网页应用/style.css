@@ -1,0 +1,14 @@
+/* style.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.todo-item {
+  @apply transition-all duration-300 ease-in-out;
+}
+
