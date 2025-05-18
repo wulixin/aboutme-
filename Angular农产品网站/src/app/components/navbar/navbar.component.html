@@ -1,0 +1,17 @@
+<nav class="navbar-container">
+  <div class="brand">绿色家园农业</div>
+  <ul class="nav-links">
+    <li><a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">首页</a></li>
+    <li><a routerLink="/products" class="nav-link" routerLinkActive="active">产品</a></li>
+    <li><a routerLink="/about" class="nav-link" routerLinkActive="active">关于我们</a></li>
+    <li><a routerLink="/contact" class="nav-link" routerLinkActive="active">联系</a></li>
+    <li>
+      <a routerLink="/cart" class="nav-link cart-link" routerLinkActive="active">
+        <span class="cart-icon">🛒</span>
+        <span *ngIf="cartService.cartItems$ | async as items" class="badge">
+          {{items.length}}
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>

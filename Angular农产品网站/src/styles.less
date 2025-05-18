@@ -1,0 +1,104 @@
+// 字体引入
+@font-face {
+  font-family: 'AgricultureFont';
+  src: local('Microsoft YaHei'), local('PingFang SC'), 
+       url('/assets/fonts/NotoSansSC-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
+
+// 全局样式变量
+@primary-color: #28a745;
+@secondary-color: #6c757d;
+@light-color: #f8f9fa;
+@dark-color: #343a40;
+@border-radius: 0.5rem;
+
+// 基础重置
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'AgricultureFont', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  line-height: 1.8;
+  color: @dark-color;
+  background-color: @light-color;
+  background-image: url('/assets/images/farm/background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode: overlay;
+  background-color: rgba(255,255,255,0.9);
+}
+
+// 内容容器透明度
+.container {
+  background-color: rgba(255,255,255,0.85);
+  border-radius: @border-radius;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+// 文字可读性增强
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+// 通用容器样式
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+// 卡片通用样式
+.card {
+  border: none;
+  border-radius: @border-radius;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// 按钮样式
+.btn {
+  border-radius: @border-radius;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: @primary-color;
+  border-color: @primary-color;
+
+  &:hover {
+    background-color: darken(@primary-color, 10%);
+    border-color: darken(@primary-color, 10%);
+  }
+}
+
+// 响应式工具类
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.py-5 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

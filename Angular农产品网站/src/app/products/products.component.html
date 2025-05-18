@@ -1,0 +1,50 @@
+<div class="container py-5">
+  <div class="row mb-5">
+    <div class="col-12">
+      <h1 class="display-5 fw-bold text-center mb-4">我们的产品</h1>
+      <p class="text-center text-muted mb-4">精选优质农产品，健康生活从这开始</p>
+      <div class="d-flex justify-content-center">
+        <div class="btn-group" role="group">
+          <button 
+            *ngFor="let category of categories"
+            class="btn btn-outline-primary"
+            [class.active]="selectedCategory === category"
+            (click)="filterProducts(category)">
+            {{ category }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    @for (product of filteredProducts; track product.id) {
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 product-card">
+          <div class="badge bg-success position-absolute top-0 end-0 m-2">新品</div>
+          <img [src]="product.image" class="card-img-top" alt="{{ product.name }}">
+          <div class="card-body d-flex flex-column">
+            <div class="mb-3">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <span class="badge bg-light text-dark mb-2">{{ product.category }}</span>
+              <p class="card-text text-muted">{{ product.description }}</p>
+            </div>
+            <div class="mt-auto">
+              <p class="card-text text-success fw-bold fs-4 mb-3">{{ product.price }}</p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary" (click)="addToCart(product)">
+                  加入购物车
+                </button>
+                <div *ngIf="addedToCart && addedProductName === product.name" 
+                     class="alert alert-success mt-2">
+                  {{product.name}} 已添加到购物车
+                </div>
+                <button class="btn btn-outline-secondary">查看详情</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

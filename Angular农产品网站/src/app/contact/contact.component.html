@@ -1,0 +1,82 @@
+<section class="contact-hero py-5 bg-light">
+  <div class="container">
+    <h1 class="display-4 fw-bold text-center mb-4">联系我们</h1>
+    <p class="lead text-center mb-5">我们很乐意听取您的意见和建议</p>
+  </div>
+</section>
+
+<section class="contact-content py-5">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4">
+            <h2 class="mb-4">发送消息</h2>
+            <form (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="name" class="form-label">姓名</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">邮箱</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">消息</label>
+                <textarea class="form-control" id="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">发送消息</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4">
+            <h2 class="mb-4">联系信息</h2>
+            <div class="contact-info">
+              <div class="d-flex mb-4">
+                <i class="bi bi-geo-alt-fill fs-4 text-success me-3"></i>
+                <div>
+                  <h5>地址</h5>
+                  <p>北京市朝阳区农业科技园A区8号</p>
+                </div>
+              </div>
+              <div class="d-flex mb-4">
+                <i class="bi bi-telephone-fill fs-4 text-success me-3"></i>
+                <div>
+                  <h5>电话</h5>
+                  <p>400-888-8888</p>
+                </div>
+              </div>
+              <div class="d-flex mb-4">
+                <i class="bi bi-envelope-fill fs-4 text-success me-3"></i>
+                <div>
+                  <h5>邮箱</h5>
+                  <p>info&#64;greenfarm.com</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <h5 class="mb-3">营业时间</h5>
+              <p>周一至周五: 9:00 - 18:00</p>
+              <p>周六至周日: 10:00 - 16:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-map py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">我们的位置</h2>
+    <div class="ratio ratio-16x9">
+      <iframe 
+        src="https://maps.google.com/maps?q=北京市朝阳区农业科技园&output=embed"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>

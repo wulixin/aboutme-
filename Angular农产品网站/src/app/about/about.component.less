@@ -1,0 +1,65 @@
+.about-hero {
+  background-color: #f8f9fa;
+  padding: 3rem 0;
+
+  h1 {
+    color: #28a745;
+  }
+
+  img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+}
+
+.our-story {
+  padding: 3rem 0;
+
+  .icon-box {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(40, 167, 69, 0.1);
+    border-radius: 50%;
+  }
+
+  .card {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.our-team {
+  padding: 3rem 0;
+  background-color: #f8f9fa;
+
+  .card {
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .about-hero {
+    text-align: center;
+    
+    img {
+      margin-top: 2rem;
+    }
+  }
+  
+  .our-team {
+    .card {
+      margin-bottom: 2rem;
+    }
+  }
+}

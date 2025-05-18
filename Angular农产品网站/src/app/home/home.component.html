@@ -1,0 +1,47 @@
+<section class="hero-banner mb-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold mb-4">优质农产品直供</h1>
+        <p class="lead mb-4">从田间到餐桌，新鲜直达</p>
+        <a routerLink="/products" class="btn btn-primary btn-lg">查看产品</a>
+      </div>
+      <div class="col-lg-6">
+        <img src="assets/images/hero.jpg" alt="农产品展示" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-products py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">特色产品</h2>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let product of featuredProducts">
+        <div class="card h-100">
+          <img [src]="product.image" class="card-img-top" alt="{{product.name}}">
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text text-success fw-bold">{{product.price}}</p>
+            <a routerLink="/products" class="btn btn-outline-primary w-100">了解更多</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <img src="assets/images/farm.jpg" alt="我们的农场" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="mb-4">关于我们</h2>
+        <p class="mb-4">我们是一家专注于有机农产品种植的家庭农场，致力于提供健康、安全的农产品。</p>
+        <a routerLink="/about" class="btn btn-primary">了解更多</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+.hero-banner {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+
+  h1 {
+    color: #28a745;
+    font-weight: 700;
+  }
+
+  img {
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+.featured-products {
+  padding: 3rem 0;
+
+  .card {
+    transition: transform 0.3s ease;
+    border: none;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+}
+
+.about-section {
+  padding: 3rem 0;
+
+  img {
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .hero-banner {
+    text-align: center;
+    
+    img {
+      margin-top: 2rem;
+    }
+  }
+}

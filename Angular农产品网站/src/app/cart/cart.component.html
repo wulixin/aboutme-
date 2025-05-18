@@ -1,0 +1,71 @@
+<div class="cart-container">
+  <h2 class="text-center mb-4">我的购物车</h2>
+  
+  <div *ngIf="cartItems.length === 0" class="empty-cart text-center py-5">
+    <i class="bi bi-cart-x" style="font-size: 3rem;"></i>
+    <p class="my-3">您的购物车是空的</p>
+    <a routerLink="/products" class="btn btn-primary">去选购商品</a>
+  </div>
+
+  <div *ngIf="cartItems.length > 0">
+    <div class="cart-items">
+      <div *ngFor="let item of cartItems" class="cart-item p-3 mb-3">
+        <div class="row align-items-center">
+          <div class="col-md-2">
+            <img [src]="item.image" [alt]="item.name" class="img-fluid rounded">
+          </div>
+          <div class="col-md-4">
+            <h5>{{ item.name }}</h5>
+            <small class="text-muted">{{ item.category }}</small>
+          </div>
+          <div class="col-md-2">
+            <p class="mb-0">¥{{ item.price | number:'1.2-2' }}</p>
+          </div>
+          <div class="col-md-2">
+            <input type="number" min="1" class="form-control" 
+                   [value]="item.quantity"
+                   (change)="updateQuantity(item, $event)">
+          </div>
+          <div class="col-md-2 text-end">
+            <button class="btn btn-outline-danger" (click)="removeItem(item.id)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-summary p-4 bg-light rounded">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>支付方式</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" 
+                   id="wechatPay" value="wechat" 
+                   [(ngModel)]="paymentMethod">
+            <label class="form-check-label" for="wechatPay">
+              <i class="bi bi-wechat"></i> 微信支付
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" 
+                   id="alipay" value="alipay" 
+                   [(ngModel)]="paymentMethod">
+            <label class="form-check-label" for="alipay">
+              <i class="bi bi-credit-card"></i> 支付宝
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 text-end">
+          <h4>总计: ¥{{ getTotal() | number:'1.2-2' }}</h4>
+          <button class="btn btn-success btn-lg mt-3" 
+                  (click)="checkout()"
+                  [disabled]="isCheckingOut">
+            <span *ngIf="!isCheckingOut">立即结算</span>
+            <span *ngIf="isCheckingOut" class="spinner-border spinner-border-sm"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

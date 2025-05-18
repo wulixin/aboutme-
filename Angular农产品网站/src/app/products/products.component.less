@@ -1,0 +1,60 @@
+.product-card {
+  position: relative;
+  transition: all 0.3s ease;
+  border: none;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.15);
+  }
+
+  .badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    z-index: 1;
+  }
+
+  img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.btn-group {
+  margin: 2rem 0;
+
+  .btn {
+    margin: 0 0.5rem;
+    border: 1px solid #28a745;
+    color: #28a745;
+
+    &.active {
+      background-color: #28a745;
+      color: white;
+    }
+  }
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .product-card {
+    margin-bottom: 2rem;
+  }
+
+  .btn-group {
+    flex-wrap: wrap;
+    
+    .btn {
+      margin: 0.5rem;
+    }
+  }
+}
